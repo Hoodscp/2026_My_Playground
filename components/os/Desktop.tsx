@@ -44,7 +44,11 @@ const Desktop: React.FC<DesktopProps> = ({ children }) => {
                         className="flex flex-col items-center justify-center w-24 h-24 hover:bg-white/10 dark:hover:bg-white/5 rounded-md cursor-pointer transition-colors group"
                         onDoubleClick={(e) => {
                             e.stopPropagation();
-                            openWindow(app.id, app.title, app.component);
+                            if (app.id === 'calculator') {
+                                openWindow(app.id, app.title, app.component, 300, 480);
+                            } else {
+                                openWindow(app.id, app.title, app.component);
+                            }
                         }}
                     >
                         <div className={`w-12 h-12 bg-white/10 dark:bg-white/5 rounded-lg mb-1 shadow-md group-hover:scale-105 transition-transform flex items-center justify-center`}>

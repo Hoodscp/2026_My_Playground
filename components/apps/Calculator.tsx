@@ -66,38 +66,38 @@ const Calculator = () => {
     };
 
     const buttons = [
-        { label: 'C', onClick: handleClear, className: 'bg-gray-100 hover:bg-gray-200 text-gray-900' },
-        { label: <Delete size={18} />, onClick: handleBackspace, className: 'bg-gray-100 hover:bg-gray-200 text-gray-900' },
-        { label: '%', onClick: () => { }, className: 'bg-gray-100 hover:bg-gray-200 text-gray-900' },
-        { label: '÷', onClick: () => handleOperator('÷'), className: 'bg-gray-100 hover:bg-gray-200 text-gray-900' },
-        { label: '7', onClick: () => handleNumber('7'), className: 'bg-white hover:bg-gray-50 text-gray-900 font-bold' },
-        { label: '8', onClick: () => handleNumber('8'), className: 'bg-white hover:bg-gray-50 text-gray-900 font-bold' },
-        { label: '9', onClick: () => handleNumber('9'), className: 'bg-white hover:bg-gray-50 text-gray-900 font-bold' },
-        { label: '×', onClick: () => handleOperator('×'), className: 'bg-gray-100 hover:bg-gray-200 text-gray-900' },
-        { label: '4', onClick: () => handleNumber('4'), className: 'bg-white hover:bg-gray-50 text-gray-900 font-bold' },
-        { label: '5', onClick: () => handleNumber('5'), className: 'bg-white hover:bg-gray-50 text-gray-900 font-bold' },
-        { label: '6', onClick: () => handleNumber('6'), className: 'bg-white hover:bg-gray-50 text-gray-900 font-bold' },
-        { label: '-', onClick: () => handleOperator('-'), className: 'bg-gray-100 hover:bg-gray-200 text-gray-900' },
-        { label: '1', onClick: () => handleNumber('1'), className: 'bg-white hover:bg-gray-50 text-gray-900 font-bold' },
-        { label: '2', onClick: () => handleNumber('2'), className: 'bg-white hover:bg-gray-50 text-gray-900 font-bold' },
-        { label: '3', onClick: () => handleNumber('3'), className: 'bg-white hover:bg-gray-50 text-gray-900 font-bold' },
-        { label: '+', onClick: () => handleOperator('+'), className: 'bg-gray-100 hover:bg-gray-200 text-gray-900' },
-        { label: '±', onClick: () => setDisplay(String(parseFloat(display) * -1)), className: 'bg-white hover:bg-gray-50 text-gray-900' },
-        { label: '0', onClick: () => handleNumber('0'), className: 'bg-white hover:bg-gray-50 text-gray-900 font-bold' },
-        { label: '.', onClick: () => !display.includes('.') && handleNumber('.'), className: 'bg-white hover:bg-gray-50 text-gray-900' },
+        { label: 'C', onClick: handleClear, className: 'bg-gray-100 hover:bg-gray-200 dark:bg-[#444] dark:hover:bg-[#555] text-gray-900 dark:text-gray-100' },
+        { label: <Delete size={18} />, onClick: handleBackspace, className: 'bg-gray-100 hover:bg-gray-200 dark:bg-[#444] dark:hover:bg-[#555] text-gray-900 dark:text-gray-100' },
+        { label: '%', onClick: () => { }, className: 'bg-gray-100 hover:bg-gray-200 dark:bg-[#444] dark:hover:bg-[#555] text-gray-900 dark:text-gray-100' },
+        { label: '÷', onClick: () => handleOperator('÷'), className: 'bg-gray-100 hover:bg-gray-200 dark:bg-[#444] dark:hover:bg-[#555] text-gray-900 dark:text-gray-100' },
+        { label: '7', onClick: () => handleNumber('7'), className: 'bg-white hover:bg-gray-50 dark:bg-[#333] dark:hover:bg-[#444] text-gray-900 dark:text-gray-100 font-bold' },
+        { label: '8', onClick: () => handleNumber('8'), className: 'bg-white hover:bg-gray-50 dark:bg-[#333] dark:hover:bg-[#444] text-gray-900 dark:text-gray-100 font-bold' },
+        { label: '9', onClick: () => handleNumber('9'), className: 'bg-white hover:bg-gray-50 dark:bg-[#333] dark:hover:bg-[#444] text-gray-900 dark:text-gray-100 font-bold' },
+        { label: '×', onClick: () => handleOperator('×'), className: 'bg-gray-100 hover:bg-gray-200 dark:bg-[#444] dark:hover:bg-[#555] text-gray-900 dark:text-gray-100' },
+        { label: '4', onClick: () => handleNumber('4'), className: 'bg-white hover:bg-gray-50 dark:bg-[#333] dark:hover:bg-[#444] text-gray-900 dark:text-gray-100 font-bold' },
+        { label: '5', onClick: () => handleNumber('5'), className: 'bg-white hover:bg-gray-50 dark:bg-[#333] dark:hover:bg-[#444] text-gray-900 dark:text-gray-100 font-bold' },
+        { label: '6', onClick: () => handleNumber('6'), className: 'bg-white hover:bg-gray-50 dark:bg-[#333] dark:hover:bg-[#444] text-gray-900 dark:text-gray-100 font-bold' },
+        { label: '-', onClick: () => handleOperator('-'), className: 'bg-gray-100 hover:bg-gray-200 dark:bg-[#444] dark:hover:bg-[#555] text-gray-900 dark:text-gray-100' },
+        { label: '1', onClick: () => handleNumber('1'), className: 'bg-white hover:bg-gray-50 dark:bg-[#333] dark:hover:bg-[#444] text-gray-900 dark:text-gray-100 font-bold' },
+        { label: '2', onClick: () => handleNumber('2'), className: 'bg-white hover:bg-gray-50 dark:bg-[#333] dark:hover:bg-[#444] text-gray-900 dark:text-gray-100 font-bold' },
+        { label: '3', onClick: () => handleNumber('3'), className: 'bg-white hover:bg-gray-50 dark:bg-[#333] dark:hover:bg-[#444] text-gray-900 dark:text-gray-100 font-bold' },
+        { label: '+', onClick: () => handleOperator('+'), className: 'bg-gray-100 hover:bg-gray-200 dark:bg-[#444] dark:hover:bg-[#555] text-gray-900 dark:text-gray-100' },
+        { label: '±', onClick: () => setDisplay(String(parseFloat(display) * -1)), className: 'bg-white hover:bg-gray-50 dark:bg-[#333] dark:hover:bg-[#444] text-gray-900 dark:text-gray-100' },
+        { label: '0', onClick: () => handleNumber('0'), className: 'bg-white hover:bg-gray-50 dark:bg-[#333] dark:hover:bg-[#444] text-gray-900 dark:text-gray-100 font-bold' },
+        { label: '.', onClick: () => !display.includes('.') && handleNumber('.'), className: 'bg-white hover:bg-gray-50 dark:bg-[#333] dark:hover:bg-[#444] text-gray-900 dark:text-gray-100' },
         { label: '=', onClick: handleEqual, className: 'bg-blue-500 hover:bg-blue-600 text-white' },
     ];
 
     return (
         <div className="w-full h-full flex flex-col bg-[#f3f3f3]">
             {/* Display */}
-            <div className="h-24 flex flex-col items-end justify-end px-4 py-2 select-none">
+            <div className="h-24 flex flex-col items-end justify-end px-4 py-2 select-none bg-white dark:bg-[#202020] transition-colors">
                 <div className="text-gray-500 text-xs h-4">{prevValue} {operator}</div>
-                <div className="text-4xl font-semibold text-gray-900 truncate w-full text-right">{display}</div>
+                <div className="text-4xl font-semibold text-gray-900 dark:text-white truncate w-full text-right">{display}</div>
             </div>
 
             {/* Keypad */}
-            <div className="flex-1 grid grid-cols-4 gap-[1px] bg-gray-300 border-t border-gray-300">
+            <div className="flex-1 grid grid-cols-4 gap-[1px] bg-gray-300 dark:bg-black border-t border-gray-300 dark:border-gray-800">
                 {buttons.map((btn, i) => (
                     <button
                         key={i}

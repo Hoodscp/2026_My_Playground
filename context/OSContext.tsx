@@ -10,6 +10,8 @@ interface WindowState {
   isMaximized: boolean;
   zIndex: number;
   component: ReactNode;
+  initialWidth?: number;
+  initialHeight?: number;
 }
 
 interface OSContextType {
@@ -17,7 +19,7 @@ interface OSContextType {
   toggleStartMenu: () => void;
   closeStartMenu: () => void;
   windows: WindowState[];
-  openWindow: (id: string, title: string, component: ReactNode) => void;
+  openWindow: (id: string, title: string, component: ReactNode, initialWidth?: number, initialHeight?: number) => void;
   closeWindow: (id: string) => void;
   minimizeWindow: (id: string) => void;
   maximizeWindow: (id: string) => void;
@@ -34,12 +36,14 @@ export const OSProvider = ({ children }: { children: ReactNode }) => {
   const toggleStartMenu = () => setIsStartMenuOpen(!isStartMenuOpen);
   const closeStartMenu = () => setIsStartMenuOpen(false);
 
-  const openWindow = (id: string, title: string, component: ReactNode) => {
+  const openWindow = (id: string, title: string, component: ReactNode, initialWidth?: number, initialHeight?: number) => {
     setWindows((prev) => {
       const existing = prev.find((w) => w.id === id);
+      const maxZ = Math.max(...prev.map((w) => w.zIndex), 0);
+
       if (existing) {
         return prev.map((w) =>
-          w.id === id ? { ...w, isOpen: true, isMinimized: false, zIndex: prev.length + 1 } : w
+          w.id === id ? { ...w, isOpen: true, isMinimized: false, zIndex: maxZ + 1 } : w
         );
       }
       return [
@@ -50,8 +54,10 @@ export const OSProvider = ({ children }: { children: ReactNode }) => {
           isOpen: true,
           isMinimized: false,
           isMaximized: false,
-          zIndex: prev.length + 1,
+          zIndex: maxZ + 1,
           component,
+          initialWidth,
+          initialHeight,
         },
       ];
     });

@@ -13,15 +13,17 @@ interface WindowProps {
     isMinimized: boolean;
     isMaximized: boolean;
     zIndex: number;
+    initialWidth?: number;
+    initialHeight?: number;
 }
 
-const Window: React.FC<WindowProps> = ({ id, title, children, isActive, isMinimized, isMaximized, zIndex }) => {
+const Window: React.FC<WindowProps> = ({ id, title, children, isActive, isMinimized, isMaximized, zIndex, initialWidth, initialHeight }) => {
     const { closeWindow, minimizeWindow, maximizeWindow, focusWindow } = useOS();
     const constraintsRef = useRef(null);
     const dragControls = useDragControls();
 
     // Window State
-    const [size, setSize] = React.useState({ width: 800, height: 600 });
+    const [size, setSize] = React.useState({ width: initialWidth || 800, height: initialHeight || 600 });
     const isResizing = React.useRef(false);
 
     // Resize Handlers
